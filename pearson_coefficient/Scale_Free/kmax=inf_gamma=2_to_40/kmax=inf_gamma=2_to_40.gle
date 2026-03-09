@@ -1,0 +1,113 @@
+size 9 6.6
+amove 0.15 0.3
+set font psncsr
+
+
+
+!include "graphutil.gle"
+begin graph
+nobox
+
+size 9.7 6.7
+
+xplaces 0 10 20 30 40
+yplaces 0.0 0.2 0.4 0.6 0.8 1.0
+
+
+data "f=0.1" d1=c1,c2
+data "f=0.4" d2=c1,c2
+data "f=0.99" d3=c1,c2
+data "f=1.0" d4=c1,c2
+
+
+d1 line color red lstyle 1 lwidth 0.03 key "\tex{$f=0.1$}"
+d2 line color blue lstyle 1 lwidth 0.03 key "\tex{$f=0.4$}"
+d3 line color green lstyle 1 lwidth 0.03 key "\tex{$f=0.99$}"
+d4 line color maroon lstyle 1 lwidth 0.03 key "\tex{$f=1.0$}"
+
+
+
+key nobox
+key hei 0.4
+key pos tr compact
+key offset 0.1 0.1
+
+xtitle  "\tex{$\gamma$}" dist 0.2 hei 0.6
+ytitle  "\tex{$r$}" dist 0.2 hei 0.6
+
+xlabels hei 0.6 dist 0.2
+ylabels hei 0.6 dist 0.1
+
+xaxis min 0 max 40
+yaxis min 0 max 1
+
+!xticks off
+
+
+end graph
+
+
+
+
+
+! draw lines:
+
+set color maroon
+set lstyle 1
+set lwidth 0.03
+
+amove xg(2) yg(0)
+aline xg(8/3) yg(0)
+
+amove xg(8/3) yg(0)
+aline xg(8/3) yg(1)
+
+amove xg(8/3) yg(1)
+aline xg(5) yg(1)
+
+
+
+
+! f=0.1
+set color red
+set lstyle 2
+set lwidth 0.01
+amove xg(0) yg(0.1765)
+aline xg(40) yg(0.1765)
+
+! f=0.4
+set color blue
+set lstyle 2
+set lwidth 0.01
+amove xg(0) yg(0.0625)
+aline xg(40) yg(0.0625)
+
+! f=0.99
+set color green
+set lstyle 2
+set lwidth 0.01
+amove xg(0) yg(4.23e-4)
+aline xg(40) yg(4.23e-4)
+
+! f=1.0
+set color maroon
+set lstyle 2
+set lwidth 0.01
+amove xg(0) yg(0.2432)
+aline xg(40) yg(0.2432)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

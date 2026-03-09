@@ -1,0 +1,88 @@
+size 9 6.6
+amove 0.15 0.3
+set font psncsr
+
+
+
+!include "graphutil.gle"
+begin graph
+nobox
+
+size 9.7 6.7
+
+xplaces 2 3 4 5 6 7 8
+yplaces 0.0 0.2 0.4 0.6 0.8 1.0
+
+
+data "kmax=1e2" d1=c1,c2
+data "kmax=1e3" d2=c1,c2
+data "kmax=1e4" d3=c1,c2
+data "kmax=1e5" d4=c1,c2
+data "kmax=1e6" d5=c1,c2
+data "kmax=inf" d6=c1,c2
+
+
+d6 line color red lstyle 1 lwidth 0.02 !key "\tex{$f=0.2$}"
+d1 line color black lstyle 2 lwidth 0.015 !key "\tex{$f=0.2$}"
+d2 line color black lstyle 2 lwidth 0.015 !key "\tex{$f=0.2$}"
+d3 line color black lstyle 2 lwidth 0.015 !key "\tex{$f=0.2$}"
+d4 line color black lstyle 2 lwidth 0.015 !key "\tex{$f=0.2$}"
+d5 line color black lstyle 2 lwidth 0.015 !key "\tex{$f=0.2$}"
+
+
+
+!key nobox
+!key hei 0.4
+!key pos tr compact
+!key offset 0.3 0.3
+
+xtitle  "\tex{$\gamma$}" dist 0.2 hei 0.6
+ytitle  "\tex{$r$}" dist 0.2 hei 0.6
+
+xlabels hei 0.6 dist 0.2
+ylabels hei 0.6 dist 0.1
+
+xaxis min 2 max 8
+yaxis min 0 max 1
+
+!xticks off
+
+
+end graph
+
+
+
+
+
+! draw lines:
+
+set color red
+set lstyle 1
+set lwidth 0.02
+
+amove xg(2) yg(0)
+aline xg(8/3) yg(0)
+
+amove xg(8/3) yg(0)
+aline xg(8/3) yg(1)
+
+amove xg(8/3) yg(1)
+aline xg(5) yg(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

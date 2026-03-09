@@ -1,0 +1,64 @@
+size 9 6.6
+amove 0.15 0.3
+set font psncsr
+
+
+
+!include "graphutil.gle"
+begin graph
+nobox
+
+size 9.7 6.7
+
+xplaces 0 0.2 0.4 0.6 0.8 1
+yplaces 0 0.1 0.2 0.3 0.4
+
+
+data "theory_c=2" d1=c1,c2
+data "theory_c=3" d2=c1,c2
+data "theory_c=5" d3=c1,c2
+data "theory_c=10" d4=c1,c2
+
+data "simulation_c=2" d11=c1,c2
+data "simulation_c=3" d12=c1,c2
+data "simulation_c=5" d13=c1,c2
+data "simulation_c=10" d14=c1,c2
+
+
+d1 line color red lwidth 0.03 lstyle 1 !key "\tex{$c=2$}"
+d2 line color blue lwidth 0.03 lstyle 1 !key "\tex{$c=3$}"
+d3 line color green lwidth 0.03 lstyle 1 !key "\tex{$c=5$}"
+d4 line color maroon lwidth 0.03 lstyle 1 !key "\tex{$c=10$}"
+
+d11 marker square color red msize 0.2 key "\tex{$c=2$}"
+d12 marker square color blue msize 0.2 key "\tex{$c=3$}"
+d13 marker square color green msize 0.2 key "\tex{$c=5$}"
+d14 marker square color maroon msize 0.2 key "\tex{$c=10$}"
+
+
+key nobox
+key hei 0.4
+key pos tr compact
+key offset 0.3 0.3
+
+xtitle  "\tex{$f$}" dist 0.2 hei 0.6
+ytitle  "\tex{$r$}" dist 0.2 hei 0.6
+
+xlabels hei 0.6 dist 0.2
+ylabels hei 0.6 dist 0.1
+
+xaxis min 0 max 1
+yaxis min 0 max 0.4
+
+!xticks off
+
+end graph
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+size 9 6.6
+amove 0.15 0.3
+set font psncsr
+
+
+
+!include "graphutil.gle"
+begin graph
+nobox
+
+size 9.7 6.7
+
+xplaces 0 0.2 0.4 0.6 0.8 1
+yplaces 0.0 0.2 0.4 0.6 0.8 1.0
+
+
+
+data "theory_c=1" d1=c1,c2
+data "theory_c=2" d2=c1,c2
+data "theory_c=3" d3=c1,c2
+data "theory_c=4" d4=c1,c2
+data "theory_c=10" d5=c1,c2
+
+
+data "simulation_c=1" d11=c1,c2
+data "simulation_c=2" d12=c1,c2
+data "simulation_c=3" d13=c1,c2
+data "simulation_c=4" d14=c1,c2
+data "simulation_c=10" d15=c1,c2
+
+
+d1 line color red lstyle 1 lwidth 0.03 key "\tex{$c=1$}"
+d2 line color blue lstyle 1 lwidth 0.03 key "\tex{$c=2$}"
+d3 line color green lstyle 1 lwidth 0.03 key "\tex{$c=3$}"
+d4 line color maroon lstyle 1 lwidth 0.03 key "\tex{$c=4$}"
+d5 line color skyblue lstyle 1 lwidth 0.03 key "\tex{$c=10$}"
+
+
+d11 marker square color red msize 0.2 !key "\tex{$c=1$}"
+d12 marker square color blue msize 0.2 !key "\tex{$c=2$}"
+d13 marker square color green msize 0.2 !key "\tex{$c=3$}"
+d14 marker square color maroon msize 0.2 !key "\tex{$c=4$}"
+d15 marker square color skyblue msize 0.2 !key "\tex{$c=10$}"
+
+
+key nobox
+key hei 0.4
+key pos tl compact
+key offset 0.1 0.1
+
+xtitle  "\tex{$f$}" dist 0.2 hei 0.6
+ytitle  "\tex{$r$}" dist 0.2 hei 0.6
+
+xlabels hei 0.6 dist 0.2
+ylabels hei 0.6 dist 0.1
+
+xaxis min 0 max 1
+yaxis min 0 max 1
+
+!xticks off
+
+end graph
+
+
+
+
+
+
+
+
+

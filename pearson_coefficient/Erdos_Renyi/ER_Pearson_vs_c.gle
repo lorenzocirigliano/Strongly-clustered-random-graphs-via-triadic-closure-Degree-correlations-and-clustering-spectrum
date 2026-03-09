@@ -1,0 +1,60 @@
+size 9 6.6
+amove 0.15 0.3
+set font psncsr
+
+
+
+!include "graphutil.gle"
+begin graph
+nobox
+
+size 9.7 6.7
+
+xplaces 0 2 4 6 8 10
+yplaces 0.0 0.2 0.4 0.6 0.8 1.0
+
+
+data "theory_f=0.2" d1=c1,c2
+data "theory_f=0.4" d2=c1,c2
+data "theory_f=1.0" d3=c1,c2
+
+data "simulation_f=0.2" d11=c1,c2
+data "simulation_f=0.4" d12=c1,c2
+data "simulation_f=1.0" d13=c1,c2
+
+
+d1 line color red lstyle 1 lwidth 0.03 !key "\tex{$f=0.2$}"
+d2 line color green lstyle 1 lwidth 0.03 !key "\tex{$f=0.4$}"
+d3 line color blue lstyle 1 lwidth 0.03 !key "\tex{$f=1.0$}"
+
+d11 marker square color red msize 0.2 key "\tex{$f=0.2$}"
+d12 marker square color green msize 0.2 key "\tex{$f=0.4$}"
+d13 marker square color blue msize 0.2 key "\tex{$f=1.0$}"
+
+
+key nobox
+key hei 0.4
+key pos tr compact
+key offset 0.3 0.3
+
+xtitle  "\tex{$c$}" dist 0.2 hei 0.6
+ytitle  "\tex{$r$}" dist 0.2 hei 0.6
+
+xlabels hei 0.6 dist 0.2
+ylabels hei 0.6 dist 0.1
+
+xaxis min 0 max 10
+yaxis min 0 max 1
+
+!xticks off
+
+end graph
+
+
+
+
+
+
+
+
+
